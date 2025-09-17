@@ -2,7 +2,7 @@ public class task_one
 {
 	public static void main(String[] args) 
 	{
-	// --- Equation 1 (index #4) ---
+		// --- Equation 1 (index #4) ---
 		double a4 = 3.56;
 		double b4 = 1.02;
 		double c4 = 3.0;
