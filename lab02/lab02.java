@@ -1,4 +1,4 @@
-public class task_one
+public class lab02
 {
 	public static void main(String[] args) 
 	{
