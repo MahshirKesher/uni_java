@@ -6,17 +6,19 @@ package lab03;
  *
  * @author MahshirKesher
  */
-public class lab03 {
-
-/**
+public class lab03 
+{
+	/**
      * ========== GLOBAL MAIN ==========
-     * Runs all three tasks consecutively with sample arguments.
+     * Runs all three tasks consecutively with basic sample arguments.
      */
 	public static void main(String[] args) 
 	{
+		Task1 test = new Task1();
+
 		System.out.println("=== Running Task 1 ===");
-		Task1.printResults(2, 8, 5);	
-		Task1.printResults(1, 4, 30);	
+		test.printResults(2, 8, 5);	
+		test.printResults(1, 4, 30);	
 		
 		System.out.println("\n=== Running Task 2 ===");
 		Task2.printResults(5, 3);
@@ -43,13 +45,13 @@ public class lab03 {
 			printResults(2, -3, 10); // exception, b < 0
 		}
 	
-		public static double calculateSum(double a, double b, int k) 
+		private static double calculateSum(double a, double b, int k) 
 		{
 			if (a < 0 || b < 0 || k <= 0 || k > 30) 
 			{
 				throw new IllegalArgumentException("Invalid arguments: a=" + a + ", b=" + b + ", k=" + k);
 			}
-	
+
 			double sum = 0;
 			for (int i = 1; i <= k; i++) 
 			{
@@ -58,14 +60,14 @@ public class lab03 {
 			return sum;
 		}
 
-		static void printResults(double a, double b, int k) 
+		public static void printResults(double a, double b, int k) 
 		{
 			System.out.print("Task1 -> a:" + a + " b:" + b + " k:" + k + " result: ");
 		
-			try 
+			try
 			{
 				System.out.println(calculateSum(a, b, k));
-			} 
+			}
 			
 			catch (IllegalArgumentException e) 
 			{
@@ -163,26 +165,26 @@ public class lab03 {
 			}
 			return sum;
 		}
-	
-		private static double factorial(int n) 
+
+		private static double factorial(int n)
 		{
 			double result = 1;
-			for (int i = 2; i <= n; i++) 
+			for (int i = 2; i <= n; i++)
 			{
 				result *= i;
 			}
 			return result;
 		}
-	
-		static void printResults(double epsilon) 
+
+		static void printResults(double epsilon)
 		{
 			System.out.print("Task3 -> epsilon:" + epsilon + " result: ");
-			try 
+			try
 			{
 				System.out.println(infiniteSum(epsilon));
-			} 
-		
-			catch (IllegalArgumentException e) 
+			}
+
+			catch (IllegalArgumentException e)
 			{
 				System.out.println("EXCEPTION! " + e.getMessage());
 			}
